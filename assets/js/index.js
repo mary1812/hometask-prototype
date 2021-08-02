@@ -61,7 +61,7 @@ function MyArrayProto() {
       concatArray.push(this[i]);
     }
     for (let i = 0; i < arguments.length; i++) {
-      if (MyArray.isMyArr(arguments[i])) {
+      if (MyArray.isMyArray(arguments[i])) {
         console.log(arguments)
         for (let j = 0; j < arguments[i]; j++) {
           concatArray.push(arguments[i][j]);
@@ -83,7 +83,9 @@ function MyArray() {
   }
 }
 
-MyArray.isMyArr = function () {};
+MyArray.isMyArray = function (arg) {
+  return arg instanceof MyArray;
+};
 
 const myArrProto = new MyArrayProto();
 
